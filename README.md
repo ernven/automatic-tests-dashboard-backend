@@ -1,6 +1,9 @@
 # Automatic Tests Dashboard Project - Backend
 This Back End architecture was done as part of our Course Project in Haaga-Helia. The whole service (including Front End in a separate repository) is meant to display a dashboard summarizing results from automated tests performed, when the results were added to the database.
 
+The Back End Web Server was done by me, ernven (the GraphQL implementation was done in collaboration with Simon).
+The Database was done by Arttu, Geoffrey and Simon. The SSH documentation and test parsing (not featured here) were done by Nikita.
+
 Backend, SSH tunnel and database documentation are all found in their respective folders.
 
 
