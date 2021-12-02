@@ -1,4 +1,6 @@
-# case2020s-backend
+# Automatic Tests Dashboard Project - Backend
+This Back End architecture was done as part of our Course Project in Haaga-Helia. The whole service (including Front End in a separate repository) is meant to display a dashboard summarizing results from automated tests performed, when the results were added to the database.
+
 Backend, SSH tunnel and database documentation are all found in their respective folders.
 
 
@@ -25,13 +27,15 @@ All `GET` endpoints support filtering by date now, appending `/startDate/endDate
 
 The set must be an object, in **JSON** format, following this model:
 
-{<br/> 
-&emsp;&emsp;"columns": ["col_1", "col_2", "col_3"],<br/> 
-&emsp;&emsp;"types": ["type_1", "type_2", "type_3"],<br/> 
-&emsp;&emsp;"components": ["Component_1", "Component_2"],<br/> 
-&emsp;&emsp;"startDate": "YYYY-MM-DD",<br/> 
-&emsp;&emsp;"endDate": "YYYY-MM-DD"<br/> 
-}<br/>
+```json
+{
+  "columns": ["col_1", "col_2", "col_3"],
+  "types": ["type_1", "type_2", "type_3"],
+  "components": ["Component_1", "Component_2"],
+  "startDate": "YYYY-MM-DD",
+  "endDate": "YYYY-MM-DD"
+}
+```
 
 Fields "types" and "components" are the only ones mandatory, all the rest being optional.
 
