@@ -1,0 +1,23 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "Signant project - Back End web server",
+  "author": "HH",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "checkit": "^0.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.12",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

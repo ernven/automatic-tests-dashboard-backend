@@ -1,0 +1,25 @@
+{
+  "name": "graphql-backend-test",
+  "version": "1.0.0",
+  "description": "Back-End test using GraphQL",
+  "author": "HH",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "apollo-server-express": "^2.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^15.4.0",
+    "knex": "^0.21.12",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

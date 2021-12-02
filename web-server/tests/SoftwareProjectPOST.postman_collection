@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "4e36b7ff-0945-40a0-950b-212ab94bf950",
+		"name": "SoftwareProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Software Project test http://{{url}}:{{port}}/api/tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"startTime\": \"2020-09-18 21:38:38.006\",\r\n    \"endTime\": \"2020-09-18 21:39:15.359\",\r\n    \"testtrigger\": \"testtriggerA\",\r\n    \"testType\": \"int\",\r\n    \"componentName\": \"ComponentA\",\r\n    \"totalFail\": \"54\",\r\n    \"totalPass\": \"647\",\r\n    \"documentation\": \"Robot Framework acceptance tests\",\r\n    \"hasPassed\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests",
+					"protocol": "http",
+					"host": [
+						"195",
+						"148",
+						"21",
+						"92"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"tests"
+					]
+				},
+				"description": "Test to check if the backend api is working to add data to the database for our software porject at Haaga-Helia"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "ec21c963-3a49-4ff9-b08e-0429cb81a308",
+			"key": "url",
+			"value": ""
+		},
+		{
+			"id": "86990ea4-f254-4b8d-8ebc-6de9e2fb4938",
+			"key": "port",
+			"value": ""
+		},
+		{
+			"id": "9c073272-2f1e-4772-9d46-252647b8176b",
+			"key": "url_local",
+			"value": "localhost"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

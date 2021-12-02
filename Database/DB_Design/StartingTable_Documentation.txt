@@ -1,0 +1,8 @@
+id = auto generated
+start-time: <status> tag at the end of the suite
+endtime: <status> tag at the end of the suite
+trigger, testType, componentName: Metadata provided from customer
+totalFail: <statistics><total><stat> at the end of the XML file
+totalPass: <statistics><total><stat> at the end of the XML file
+documentation: <doc> before suite closing tag </suite>
+hasPassed: from <status> tag before closing tag </suite> pass = true

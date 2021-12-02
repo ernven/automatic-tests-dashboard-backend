@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "8bb50c98-5515-4d93-b03c-e4e9e9bbb3d7",
+		"name": "2nd_Sprint_tests_01",
+		"description": "Testing the new implementation for adding items from an array of test objects, as well as filtering results by date of test run.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all tests, BETWEEN given dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests/all/2020-09-19/2020-09-21",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests",
+						"all",
+						"2020-09-19",
+						"2020-09-21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tests by component, BETWEEN given dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests/component/ComponentA/2020-09-19/2020-09-21",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests",
+						"component",
+						"ComponentA",
+						"2020-09-19",
+						"2020-09-21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests/type",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests",
+						"type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "undefined endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/undefined",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"undefined"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "using custom search example",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"columns\": [\"startTime\", \"totalPass\", \"totalFail\"],\n    \"types\": [\"unit\", \"system\", \"int\"],\n    \"components\": [\"ComponentA\", \"ComponentB\"],\n    \"startDate\": \"2020-01-01\",\n    \"endDate\": \"2020-12-31\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests/custom",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests",
+						"custom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "from array, two test result objects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-18 21:38:38.006\",\n    \"endTime\": \"2020-09-18 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerC\",\n    \"componentName\": \"ComponentA\"\n},{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-26 21:12:44.006\",\n    \"endTime\": \"2020-09-26 21:39:15.128\",\n    \"hasPassed\": \"1\",\n    \"totalFail\": \"114\",\n    \"totalPass\": \"607\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerA\",\n    \"componentName\": \"ComponentA\"\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "array, fields missing on one entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-18 21:38:38.006\",\n    \"endTime\": \"2020-09-18 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerC\",\n    \"componentName\": \"ComponentY\"\n},{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-18 21:38:38.006\",\n    \"endTime\": \"2020-09-18 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerA\"\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "array of tests, invalid fields on two entries",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-18 21:38:38.006\",\n    \"endTime\": \"2020-09-18 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerC\",\n    \"componentName\": \"ComponentON\"\n},{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-17 21:39:15.356\",\n    \"endTime\": \"2020-09-17 21:39:15.359\",\n    \"hasPassed\": false,\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerA\",\n    \"componentName\": \"ComponentON\"\n},{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-17\",\n    \"endTime\": \"2020-09-17 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerA\",\n    \"componentName\": \"ComponentON\"\n},{\n    \"documentation\": \"NEW ORDER acceptance tests\", \n    \"startTime\": \"2020-09-18 21:38:38.006\",\n    \"endTime\": \"2020-09-18 21:39:15.359\",\n    \"hasPassed\": \"0\",\n    \"totalFail\": \"54\",\n    \"totalPass\": \"647\",\n    \"testType\": \"unit\",\n    \"testtrigger\": \"testtriggerC\",\n    \"componentName\": \"ComponentON\"\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/api/tests",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"tests"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "ec21c963-3a49-4ff9-b08e-0429cb81a308",
+			"key": "url",
+			"value": ""
+		},
+		{
+			"id": "86990ea4-f254-4b8d-8ebc-6de9e2fb4938",
+			"key": "port",
+			"value": ""
+		},
+		{
+			"id": "9c073272-2f1e-4772-9d46-252647b8176b",
+			"key": "url_local",
+			"value": "localhost"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
